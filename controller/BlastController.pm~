@@ -1,0 +1,73 @@
+#!/usr/bin/perl -w
+
+package ::BlastController;
+
+# Using local modules
+use lib '/var/www/gsm/model/';
+use Connect;
+use File;
+use LocalBlast;
+use Switch;
+use RemoteBlast;
+use CGI;
+
+# Object the class
+my $db   = Connect::db;
+my $file = new File;
+
+# Method new the class BlastController
+sub new
+{	
+    return bless {}, shift || ref shift;
+}
+
+# runBlast Method the class BlastController  
+sub runBlast
+{
+	my ( $database,$program,$filename,$operation ) = @_;
+	print $database;
+	exit;
+	switch ( $operation )
+	{
+		case 'Search'
+		{
+			switch ( $database ) 
+			{	
+				case  ('Read' or 'Contig' or 'Scafold' or 'Fungi' or 'All')
+				{
+					if($filename ne '')
+					{	
+						Blast::setProgram ($program);
+						Blast::setDatabase($database);
+						Blast::setQuery   ($filename);
+						Blast::QueryBlast ();
+					}
+					else
+					{
+						return 'Não foi possível fazer o blast!';
+					}
+				}
+				case 'NCBI'
+				{
+					if($filename ne '')
+					{	
+						RemoteBlast::RemoteBlast($database,$program,$file);
+					}
+					else
+					{
+						return 'Não foi possível fazer o blast!';
+					}
+				
+				
+				}
+		
+			}
+		}
+		case 'Clear'
+		{
+			CGI::redirect(-URL =>'http://200.235.177.179/gsm/view/public/muBlast.pl');
+		}
+	}
+}
+
+return 1

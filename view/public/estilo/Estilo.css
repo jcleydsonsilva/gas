@@ -1,0 +1,955 @@
+/* Moldura */
+
+body {
+	background: url('../imagens/fundo_corpo.png');
+	background-attachment: fixed;
+
+}
+
+div.moldura0 {
+	margin: 0 auto;
+	width: 776px;;
+}
+
+div.moldura0 > div.superior {
+	background: url('../imagens/fundo_conteudo_superior.png') no-repeat;
+	height: 776 px;
+}
+
+div.moldura0 > div.superior > table {
+	border-collapse: collapse;
+	height: 100%;
+	width: 100%;
+}
+
+div.moldura0 > div.superior > table tr > td {
+	padding: 0;
+}
+
+div.moldura0 > div.superior > table tr > td > h1 {
+	margin: 0;
+}
+
+div.moldura0 > div.superior > table tr > td > h1 > a {
+	float: left;
+}
+
+div.moldura0 > div.superior > table tr > td.celula1 {
+	padding: 0 4px 1px 0;
+	text-align: right;
+	vertical-align: bottom;
+}
+
+div.moldura0 > div.superior > table tr > td.celula1 > nobr {
+	font-size: 11px;
+}
+
+div.moldura0 > div.mediano {
+	background-color: white;
+}
+
+div.moldura0 > div.inferior {
+	background: url('../imagens/fundo_conteudo_inferior.png') no-repeat;
+	height: 25px;
+	/*height: auto auto;*/
+}
+
+div.moldura0 > div.inferior > p {
+	background: url('../imagens/fundo_conteudo_inferior_1.png') no-repeat;
+	height: 25px;
+	margin: 0;
+}
+
+/* Autenticação */
+
+div.moldura0 > div.mediano.autenticacao.guardiao {
+	padding: 20px 80px 20px 80px;
+}
+
+div.moldura0 > div.mediano.autenticacao.guardiao > div.celula1 > div.moldura1.autenticacao.inicial > img {
+	border: 0 none;
+	display: -moz-inline-stack; display: inline-block; zoom: 1; *display: inline;
+	padding: 5px;
+	width: 50%;
+}
+
+div.moldura0 > div.mediano.autenticacao.guardiao > div.celula1 > div.moldura1.autenticacao.inicial > form {
+	display: -moz-inline-stack; display: inline-block; zoom: 1; *display: inline;
+}
+
+div.moldura0 > div.mediano.autenticacao.guardiao > div.celula1 > div.moldura1.autenticacao.inicial > form + div,
+div.moldura0 > div.mediano.autenticacao.guardiao > div.celula1 > div.moldura1.autenticacao.inicial > form + div + div {
+	font-size: 80%;
+	margin: 0 0 0 400px;
+}
+
+div.moldura0 > div.mediano.autenticacao.guardiao > div.celula1 > div.moldura1.autenticacao.inicial > form > dl > dd {
+	margin: 0;
+}
+
+/* Menu */
+
+div.moldura0 > div.mediano.menu > div.celula0 {
+	font-size: 80%;
+}
+
+div.moldura0 > div.mediano.menu > div.celula0 > ul.navigation {
+	margin: 0;
+	padding: 0;
+}
+
+div.moldura0 > div.mediano.menu > div.celula0 > ul.navigation li {
+	padding: 0 2px 0 2px;
+	cursor: pointer; 
+	list-style: none; 
+}
+
+div.moldura0 > div.mediano.menu > div.celula0 > ul.navigation li:hover {
+	background-color: White;
+	position: relative;
+}
+
+div.moldura0 > div.mediano.menu > div.celula0 > ul.navigation li a {
+	color: Blue;
+}
+
+div.moldura0 > div.mediano.menu > div.celula0 > ul.navigation li a:hover {
+	filter: alpha(opacity=60);
+	-moz-opacity: 0.6;
+	-khtml-opacity: 0.6;
+	opacity: 0.6;
+}
+
+div.moldura0 > div.mediano.menu > div.celula0 > ul.navigation li ul {
+	padding-left: 0;
+	display: none;
+	position: absolute;
+	background-color: LightGrey;
+	filter: alpha(opacity=90);
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.9;
+	opacity: 0.9;
+	border: 1px solid LightGrey;
+}
+
+div.moldura0 > div.mediano.menu > div.celula0 > ul.navigation li ul li {
+	border: none;
+	display: block;
+	float: left;
+	width: 200px;
+}
+
+div.moldura0 > div.mediano.menu > div.celula0 > ul.navigation li ul li:hover {
+	border: none;
+}
+
+div.moldura0 > div.mediano.menu > div.celula0 > ul.navigation li:hover ul {
+	display: block;
+}
+
+div.moldura0 > div.mediano.menu.vertical > div.celula0,
+div.moldura0 > div.mediano.menu.vertical > div.celula1,
+div.moldura0 > div.mediano.menu.vertical > div.celula2 {
+	display: -moz-inline-stack; display: inline-block; zoom: 1; *display: inline;
+	vertical-align: top;
+}
+
+div.moldura0 > div.mediano.menu.vertical > div.celula0 {
+	width: 165px;
+}
+
+div.moldura0 > div.mediano.menu.horizontal > div.celula0 > ul.navigation {
+	border-bottom: thin solid LightGrey;
+	padding: 0 0 1px 0;
+}
+
+div.moldura0 > div.mediano.menu.horizontal > div.celula0 > ul.navigation li {
+	display: inline;
+}
+
+div.moldura0 > div.mediano.menu.horizontal > div.celula0 > ul.navigation > li.active > a {
+	color: Black;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+div.moldura0 > div.mediano.menu.horizontal > div.celula0 > ul.navigation li ul {
+	left: 0;
+}
+
+div.moldura0 > div.mediano.menu.vertical > div.celula0 > ul.navigation li ul {
+	left: 100px;
+	top: 5px;
+}
+
+div.moldura0 > div.mediano.menu.vertical > div.celula1 {
+	width: 575px;
+}
+
+/*--------------------------*/
+/* Definindo estilo de tags */
+/*--------------------------*/
+body, div.moldura0.conteudo {
+	background-color: #333333;
+	font-family:Arial;
+	font-size:12px;
+}
+
+div.moldura0.conteudo>div.superior>table>tbody> tr>td:first-child {
+	padding: 0 0 0 10px;
+}
+
+div.moldura0.conteudo>div.superior>table>tbody> tr>td:first-child>h1>a {
+	background: url("../imagens/distribuicao.png") no-repeat;
+	height: 100px;
+	width: 300px;
+}
+
+div.aplicativo > div.mediano > div.celula1 > div.mensagem{
+	display:none;
+}
+
+div.aplicativo > div.mediano > div.celula1 > div.mensagem{
+	display:none;
+}
+
+body{
+	font-family:Arial;
+	outline:none;
+	padding:0px;
+}
+
+input, textarea, select{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+input[type="submit"]{
+	border:none;
+	background:url('../images/botao.png') no-repeat top left;
+	padding:2px 8px;
+	color:#000000;
+	height:21px;
+	width:82px;
+	cursor:pointer;
+	margin-bottom:10px;
+	outline:none;
+}
+
+input#cancele{
+    background:url('../images/bt_cancelar.png') no-repeat top left;
+    text-align: right;
+}
+
+input#insira, input#altere{
+    background:url('../images/bt_salvar.png') no-repeat top left;
+}
+
+input#desabilite{
+    background:url('../images/bt_excluir.png') no-repeat top left;
+}
+
+input[type="text"], input[type="password"], textarea, select{
+	border:1px solid #006400;
+	color:#000000;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus{
+	border:1px solid #C69F51;
+}
+
+ol li{
+	list-style:none outside none;
+}
+
+ol li > h3{
+	display:inline;
+	font-size:16px;
+	font-weight:bold;
+	text-transform:capitalize;
+}
+
+ol li > h3 > a{
+	text-decoration:none;
+}
+
+li{
+	line-height:1.7;
+	margin-bottom:10px;
+}
+
+h2 {
+	color:#006400;
+	font-size:20px;
+	margin:0px;
+	text-align:center;
+}
+
+div.autenticacao.inicial .zend_form{
+	padding-left: 35%;
+}
+
+div.esqueci-senha, div.alterar-senha {
+	font-size: 9pt;
+	padding-left: 1%;
+}
+
+div.mensagem.sistema{
+	margin-top:5px;
+}
+
+label.mensagem.sistema{
+	background-color:red;
+    color:white;
+    font-size:90%;
+    font-weight:bolder;
+    margin-top:5px;
+    padding:2px 7px;
+    text-align:center;
+    text-shadow:2px 1px 1px black;
+}
+
+ol.li > span{
+	display: inline-block;
+}
+
+ol.menu.vertical.acao {
+	margin-bottom:-10px;
+}
+
+ol.menu.vertical.acao > li {
+	display: -moz-inline-stack; display: inline-block; zoom: 1; *display: inline;
+	width: 60px;
+	text-align: center;
+}
+
+dl {
+	font-size:12px;
+	margin-bottom:10px;
+}
+
+dl dt {
+/*	float:left;*/
+/*	margin-right:10px;*/
+	padding-top:4px;
+/*	width:10%;*/
+}
+
+dl dd {
+	margin:4px;
+/*	padding:2px;*/
+}
+
+a {
+	outline: 0;
+}
+
+div.linhames{
+    float: left;
+    margin-bottom: 8px;
+    margin-left: 23%;
+    width: 30%;
+}
+
+div.linhaano{
+    margin-bottom: 8px;
+}
+
+div.linhames > div > label, div.linhaano > div > label{
+    float: left;
+    max-width: 200px;
+    min-width: 80px;
+    width: auto;
+}
+
+div.recurso, div.bimestre{
+    display:inline-block;
+    margin-left: 4px;
+}
+
+dt#gerarmatriz-label{
+    padding-top: 0;
+}
+
+div.recurso > div > div > label, div.bimestre > div > div > label{
+    float:left;
+    max-width:200px;
+    min-width:115px;
+    width:auto;
+}
+
+div[id|="ano0"], div[id|="ano1"], div[id|="ano2"], div[id|="ano3"],
+div[id|="ano4"], div[id|="ano5"], div[id|="ano6"], div[id|="ano7"],
+div[id|="ano8"], div[id|="ano9"], div[id|="ano10"], div[id|="ano11"],
+div[id|="ano12"], div[id|="ano13"], div[id|="ano14"], div[id|="ano15"],
+div[id|="ano16"], div[id|="ano17"], div[id|="ano18"], div[id|="ano19"],
+div[id|="ano20"], div[id|="ano21"], div[id|="ano22"], div[id|="ano23"]{
+    display: none;
+}
+
+div.sequence {
+	font-family:courier;
+
+}
+div.anotacao {
+	font-family:courier;
+
+}
+
+/*---------------------------------------------------------*/
+/*						Definindo Classes				   */
+/*---------------------------------------------------------*/
+
+.s{
+	line-height: 1.2;
+	font-size: small;
+	max-width: 50em;
+}
+
+.expressao{
+	color: #006400;
+	display: block;
+	font-size: 12px;
+	line-height: 1.2;
+	margin-top:-5px;
+}
+
+.black{
+	color: #000000;
+	display:inline;
+	font-size: 12px;
+	display:table;
+}
+
+.black2{
+	float:right;
+	font-size:12px;
+	margin-top:-18px;
+	position:relative;
+	right:3%;
+}
+
+.inline{
+	line-height: 0.2;
+}
+
+.green{
+	color: #006400;
+	display: inline;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.selecionado{
+	background: url("../images/selecionado.png") no-repeat;
+	width: 50px;
+	height: 20px;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.selecionado > a{
+	text-decoration: none;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.deselecionado{
+	background: url("../images/deselecionado.png") no-repeat;
+	width: 50px;
+	height: 20px;
+	font-size: 12px;
+}
+
+.deselecionado > a{
+	text-decoration: none;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.borda{
+	border: 1px solid #006400;
+	margin: 0px 40px;
+    padding-bottom:15px;
+}
+
+.borda > ol{
+	padding-left: 15px;
+	*padding-left: 0px;
+}
+
+.cabecalho{
+	background: url(../images/topo.png) no-repeat;
+	width: 700px;
+	height: 150px;
+}
+
+.meio{
+	background-color: #FFFFFF;
+	padding-bottom:12px;
+	padding-top:0px;
+	width: 700px;
+	vertical-align: top;
+}
+
+.base{
+	background: url(../images/base.png) no-repeat;
+	width: 700px;
+	height: 40px;
+}
+
+.noborder{
+	border: 0;
+}
+
+.vazio{
+	color: #FF0000;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*---------------------------------------------------------*/
+/*						Definindo ID's					   */
+/*---------------------------------------------------------*/
+#container{
+	margin: 0 auto;
+	position: relative;
+	width: 700px;
+	clear: left;
+	z-index: 0;
+}
+
+#titulo{
+	color: #336699;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#texto{
+	font-size: 12px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: justify;
+}
+
+#linkufv{
+	display: block;
+	float: right;
+	height: 30px;
+	right: 47px;
+	padding-top:5px;
+	position: relative;
+	width: 30px;
+}
+
+#linkdti{
+	display: block;
+	float: rigth;
+	height: 28px;
+	left: 37px;
+	padding-top:5px;
+	position: relative;
+	width: 280px;
+}
+
+#matriz, #variavel, #peso{
+	vertical-align:middle;
+}
+
+/*---------------------------------------------------------*/
+/*				Formulários 				   */
+/*---------------------------------------------------------*/
+
+div.linha{
+	padding:10px 0 0 30px;
+	width:60%;
+}
+
+div.linha > div:first-child{
+	max-width:45%;
+	padding-right:10px;
+	text-align:left;
+	width:auto;
+}
+
+div.linha1{
+	position:50%;
+	width:100%;
+	padding-bottom:10px;
+}
+
+div.peso{
+	float:right;
+	margin:-19px 10% 0 0;
+}
+
+div.linha1 div, div.linha div, div.peso div {
+	display:inline;
+}
+
+div.linha > div.campo{
+    display: block;
+}
+
+div.variaveis{
+	float:left;
+	margin-top:-3px;
+}
+
+div.botao{
+	display:inline;
+	float:left;
+	padding-right:5px;
+	width:44%;
+}
+
+dl.zend_form{
+	margin-bottom:30px;
+}
+
+/*---------------------------------------------------------*/
+/*				Formulário de autenticação				   */
+/*---------------------------------------------------------*/
+form.autenticacao > dl > #usuario-label, #senha-label{
+	width:18%;
+}
+
+/*--------------------*/
+/*Formulário de matriz*/
+/*--------------------*/
+form.matriz{
+	padding-left:5px;
+}
+
+label#total{
+	border-color:transparent;
+	float:right;
+	font-size:16px;
+    text-shadow:1px 1px #CCCCCC;
+}
+
+label#falta{
+    border-color:transparent;
+	float:right;
+	font-size:16px;
+    text-shadow:1px 1px #CCCCCC;
+}
+
+table.legenda{
+    border: 1px solid #4C9686;
+    margin: 0 5px;
+}
+
+form.matriz > dl > #insira-element, #cancele-element, #altere-element, #desabilite-element{
+	display:inline;
+}
+
+form.matriz > dl > #insira-label, #cancele-label, #altere-label, #desabilite-label{
+	width:0px;
+	margin:0px;
+	margin-left:0%;
+	*margin-left:0%;
+}
+
+form.matriz > dl > #nome-element > #nome{
+	text-transform: capitalize;
+}
+
+form.matriz > dl > #nome-label{
+	width:16%;
+}
+
+form.matriz > dl > #percentual_dist_adm-label, #percentual_dist_acd-label{
+	width:40%;
+}
+
+form.matriz > dl > #Salvar-label{
+	width: 30%;
+}
+
+/*---------------------------------------------------------*/
+/*					Formulário de Variável				   */
+/*---------------------------------------------------------*/
+form.variavel > dl > #insira-element, #cancele-element, #altere-element, #desabilite-element{
+	display:inline;
+}
+
+form.variavel > dl > #sigla-element #sigla{
+	text-transform: uppercase;
+}
+
+form.variavel > dl > #nome-element #nome{
+	text-transform: capitalize;
+}
+
+form.variavel > dl > #insira-label, #cancele-label, #altere-label, #desabilite-label{
+	width:0px;
+	margin:0px;
+	margin-left:5.3%;
+	*margin-left:9.1%;
+}
+
+form.variavel>dl, form.matriz>dl{
+	padding-left:15px;
+}
+
+/*---------------------------------------------------------*/
+/*				Formulário de matriz de variável		   */
+/*---------------------------------------------------------*/
+table#cadMatrizvariavel{
+	font-size:12px;
+}
+
+input.peso{
+    background-color: #CCCCCC;
+}
+/*------------------------------------*/
+/* Definindo cor do texto selecionado */
+/*------------------------------------*/
+::selection {
+	background: #CCC;
+	}
+::-moz-selection {
+	background: #CCC;
+}
+
+a {
+	outline: 0;
+}
+
+ul.errors{
+	padding-left: 0px;
+}
+
+ul.errors > li{
+	background-color:red;
+    color:white;
+	font-size:90%;
+	font-weight:bolder;
+	list-style:none outside none;
+	margin-top:5px;
+	padding:2px 7px;
+	width:-moz-max-content;
+    text-shadow:2px 1px 1px black;
+}
+
+/*-------------------------*/
+/* estilo do menu vertical */
+/*-------------------------*/
+
+.celula0 a{
+	color:#006400;
+	text-decoration:none;
+}
+
+.celula0{
+	width:100%;
+	font-size:12px;
+}
+
+.celula0 ul{
+	margin:0px;
+	padding:0px;
+}
+
+.celula0 ul.navigation.vertical li{
+	height:23px;
+	line-height:23px;
+	list-style:none; 
+	padding-left:10px;
+	color:#FFFFFF;
+	cursor:pointer; 
+}
+
+.celula0 ul.navigation.vertical li:hover{
+	background-color:#FFFFFF;
+	position:relative;
+}
+
+.celula0 ul.navigation.vertical ul{
+	display:none;
+	position:absolute;
+	left:100px;
+	top:5px;
+	background-color:#FCD004;
+	filter:alpha(opacity=90);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.9;
+	opacity: 0.9;
+	border:1px solid #CCCCCC;
+}
+
+.celula0 ul.navigation.vertical li:hover ul{
+	display:block;
+}
+
+.celula0 ul.navigation.vertical ul li{
+	width:150px;
+	float:left;
+	display:block;
+	border:none;
+}
+
+.celula0 ul.navigation.vertical ul li:hover{
+	text-decoration:none;
+	border:none;
+}
+
+.celula0 li:hover ul.navigation.vertical li ul{
+	display:none;
+}
+
+.celula0 ul.navigation.vertical ul li ul{
+	left:110px;
+	background-color:#0099CC;
+}
+
+.celula0 ul.navigation.vertical ul li:hover ul{
+	display:block;
+}
+
+.celula0 li{
+	margin-bottom:0px;
+}
+
+td.lgeramatriz > a{
+    color: #006400;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+td.lgeramatriz > a:hover{
+    text-decoration: underline;
+}
+
+/*---------------------------*/
+/* estilo do menu horizontal */
+/*---------------------------*/
+div.mediano > div.celula0 > ul.navigation > li > a{
+    color: #006400;
+    text-shadow:none;
+}
+
+div.mediano > div.celula0 a{
+	color:white;
+    text-decoration:none;
+    text-shadow:0 1px #000000;
+}
+
+div.mediano > div.celula0 a:hover{
+	filter:alpha(opacity=60);
+	-moz-opacity:0.6;
+	-khtml-opacity: 0.6;
+	opacity: 0.6;
+}
+
+div.mediano > div.celula0{
+	width:100%;
+	font-size:12px;
+}
+
+div.moldura0.conteudo > div.mediano.horizontal > div.celula1 {
+    padding-bottom:20px;
+    width:100%;
+}
+
+div.mediano > div.celula0 ul.navigation{
+    background-color:#B7D9D9;
+	margin:0px;
+	padding:0px;
+}
+
+div.mediano > div.celula0 > ul.navigation li{
+	height:23px;
+	line-height:23px;
+	list-style:none; 
+	padding-left:10px;
+	color:White;
+	cursor:pointer; 
+}
+
+div.mediano.horizontal > div.celula0 ul.navigation li{
+	display:inline;
+}
+
+div.mediano > div.celula0 > ul.navigation li:hover{
+	position:relative;
+}
+
+div.mediano > div.celula0 > ul.navigation ul{
+	padding-left:0px;
+	display:none;
+	position:absolute;
+	background-color:#DD4814;
+	filter:alpha(opacity=90);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.9;
+	opacity: 0.9;
+	border:1px solid LightGrey;
+}
+
+div.mediano.vertical > div.celula0 > ul.navigation ul{
+	left:100px;
+	top:5px;
+}
+
+div.mediano.horizontal > div.celula0 ul.navigation ul{
+	left:0px;
+	top:12px;
+}
+
+div.mediano > div.celula0 > ul.navigation li:hover ul{
+	display:block;
+}
+
+div.mediano > div.celula0 > ul.navigation ul li{
+	width:200px;
+	float:left;
+	display:block;
+	border:none;
+}
+
+div.mediano > div.celula0 > ul.navigation ul li:hover{
+    background-color:#2C001E;
+	text-decoration:none;
+	border:none;
+}
+
+div.mediano > div.celula0 li:hover ul.navigation li ul{
+	display:none;
+}
+
+div.mediano > div.celula0 > ul.navigationul li ul{
+	left:110px;
+	background-color:LightGrey;
+}
+
+div.mediano > div.celula0 > ul.navigationul li:hover ul{
+	display:block;
+}
+
+div.mediano > div.celula0 li{
+	margin-bottom:0px;
+}
+
+div.moldura0.conteudo > div.mediano.vertical > div.celula0 {
+	width:165px;
+}
+
+div.moldura0.conteudo > div.mediano.horizontal > div.celula0 {
+	width:100%;
+}
+fieldset
+{
+	border: 1px solid #999999;
+}
+legend
+{
+    border: 1px solid #999999;
+    color: green;
+    font-size: 13px;
+    padding: 2px 5px;
+}

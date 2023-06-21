@@ -1,0 +1,55 @@
+#!/usr/bin/perl -w
+
+=head1
+
+Classe Anotation - Módulo de automação de anotação de genes na web
+Claase para anotação de genes utilizando o fgenesh
+José Cleydson ferreira da SIlva
+20/09/2011
+
+=cut
+
+# Nome do pacote, refere-se ao nome da classe
+
+package ::AnotationFgenesh;
+
+# Módulo utilizado para fazer a consulta on-line
+use WWW::Mechanize;
+
+=head1
+
+ Faz consulta no Gene Finding na url
+ http://mendel.cs.rhul.ac.uk/mendel.php?topic=fgen-file
+
+=cut
+
+sub QueryAnotation
+{
+	my $program  = shift;
+	my $filename = shift;
+
+	if(@_)
+	{
+		$program ->{program }= $_[0];
+		$filename->{filename}= $_[1];
+	}
+
+	my $mech = WWW::Mechanize->new();
+
+      $mech->agent_alias( 'Linux Mozilla' );
+      $mech->get('http://linux1.softberry.com/berry.phtml?topic=fgenesh&group=programs&subgroup=gfind');
+	#$mech->get('http://mendel.cs.rhul.ac.uk/mendel.php?topic=fgen-file');
+
+	$mech->submit_form
+				(
+				fields => {
+						FILE 		=> "$filename"  ,
+						org		=>'N_crassa.dat',
+						#org		=>'c',
+						#program_name=>'fgenesh'     ,
+						}
+				);
+	print $mech->content();
+
+}
+return 1

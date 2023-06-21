@@ -1,0 +1,166 @@
+package InterProScan;
+
+# Name: Classe InterProScan
+
+
+# 1 - BlastProDom:
+# 2 - HMMTigr:
+# 3 - SignalPHMM:
+# 4 - FPrintScan:
+# 5 - ProfileScan:
+# 6 - TMHMM:
+# 7 - HMMPIR:
+# 8 - HAMAP:
+# 9 -  HMMPanther:
+# 10 - HMMPfam:
+# 11 - PatternScan:
+# 12 - Gene3D:
+# 13 - HMMSmart:
+# 14 - SuperFamily:
+
+use WWW::Mechanize;
+
+sub Set_Family
+{
+	my $family = shift;
+	if(@_)
+	{
+		$family{family} = $_[0];
+	}
+
+}
+
+#
+
+sub Get_Family
+{
+	my $family = shift;
+	return $family;
+}
+
+
+sub Set_Go
+{
+	my $go = shift;
+	if(@_)
+	{
+		$go{go} = $_[0];
+	}
+}
+
+sub Get_Go
+{
+	my $go = shift;
+	return $go;
+}
+
+sub RunInterProScan
+{
+	my $sequence  = shift;
+	my $output	  = shift;
+
+	if(@_)
+	{
+		$sequence{sequence} = $_[0];
+		$output  {output  } = $_[1];
+	}
+
+	my $mech = WWW::Mechanize->new();
+
+	$mech->get('http://www.ebi.ac.uk/Tools/pfa/iprscan/');
+
+	$mech->submit_form
+				(
+				fields => {
+						'sequence'=> "$sequence", 
+						'appl'  => 'blastprodom',
+						'appl'  => 'fprintscan' ,
+						'appl'  => 'hmmpir'	,
+						'appl'  => 'hmmpfam'	,
+						'appl'  => 'hmmsmart'	,
+						'appl'  => 'hmmtigr'	,
+						'appl'  => 'profilescan',
+						'appl'  => 'hamap'	,
+						'appl'  => 'patternscan',
+						'appl'  => 'superfamily',
+						'appl'  => 'signalp'	,
+						'appl'  => 'tmhmm'	,
+						'appl'  => 'hmmpanther' ,
+						'appl'  => 'gene3d'	,
+						}
+				);
+
+
+	$linkoriginal = 'http://www.ebi.ac.uk/Tools/services/web/';
+	$adicional = '&analysis=output';
+	@links     = $mech->find_all_links();
+
+	while(index($mech->content(format => 'text'), "InterProScan Results") == -1)
+	{
+		$mech->get($linkoriginal.$links[0]->url.$adicional);
+	}
+
+	$link = 'http://www.ebi.ac.uk';
+	@links     = $mech->find_all_links();
+	$mech->get($link.$links[15]->url);
+
+	open (OUTFILE,">$output") || warn "ERRO";
+
+		print OUTFILE $mech->content;
+
+	close(OUTFILE);
+
+	return 'Ok';
+}
+
+sub ParserInterProScan
+{
+	my $output = shift;
+	if(@_)
+	{
+		$output{outout} = $_[0];
+	}
+	print $output;
+	exit;
+	open(INFILE,"<$output");
+
+		my (@interpro,@goall) = ();
+		while($line = <INFILE>)
+		{
+			chomp($line);
+
+			@split = split (/\t/,$line);
+
+			$go_split = $split[13];
+			@go_split = split (/,/,$go_split);
+		
+			$tam = @go;
+			while($i <= $tam)
+			{
+				@function = ();
+				@function = split (/:[[:blank:]]/,$go_split[$i]);
+			
+				my @godesc = ();
+				@godesc = split (/[ ]\(/,$function[1]);
+
+				@goline = ();
+				@goline = ($function[0],$godesc[0],$godesc[1]);
+				@go_all  = [@goline];
+				push @goall  , [@go_all];
+				$i++;
+			}
+			@gopartial = ();
+			@gopartial = ($split[3],$split[4],$split[5],$split[11],$split[12]);
+			push @interpro, [@gopartial];
+		}
+	close(INFILE);
+	Set_Family(@interpro);
+	Set_Go(@goall);
+
+}
+return 1
+
+
+
+
+

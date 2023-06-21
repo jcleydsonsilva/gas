@@ -1,0 +1,24 @@
+<script language="javascript" type="text/javascript" src="js/menuSuperior.js"></script>
+
+<link href="estilo/Estilo.css" rel="stylesheet" type="text/css"></link>
+<link rel="stylesheet" type="text/css" href="estilo/menuSuperior.css" media="all" />
+
+		   
+			 </head>
+                         <body class="tundra " onload="">
+									<div class="aplicativo moldura0 conteudo">
+                           <div class="superior">
+                             <table>
+									  <tr>
+                               <td>
+                                 <h1> <a href="index.pl"></a></h1>
+                               </td>
+                               <td class="celula1"></td>
+                             </tr>
+            </table>
+                         </div>
+<div class="mediano autenticacao guardiao">
+<div class="celula0"></div>
+<div class="celula1">
+<div class="mensagem"></div>
+<div class="moldura1 autenticacao inicial">

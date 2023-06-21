@@ -1,0 +1,61 @@
+#
+# README - Readme File for "pub/software/geneid" directory.
+#
+# $Id: README,v 1.2 2003/03/28 14:17:11 gmaster Exp gmaster $
+#
+
+This directory contains the following files and subdirectories:
+
+  README    This file...
+  GNU-GPL   GNU General Public License (Version 2) - Free Software.
+            Terms and conditions for copying, distribution and modification.
+
+  -----------------------------------------------
+  geneid_v1.2.Apr_23_2004.tar.gz       Full distribution of geneid v1.2 (source + parameter files)
+  geneid_v1.1.Feb_26_2003.tar.gz       Revision (free of some compilation bugs)
+  geneid_v1.1.Jul_15_2002.tar.gz       Full distribution of geneid v1.1 (source + parameter files)
+  docs.Jul_15_2002.tar.gz              User's manual for geneid v1.1
+
+  -----------------------------------------------
+
+  geneid_v1.0.Sep_08_2000.tar.gz         Full distribution of geneid v1.0 (source + parameter files)     
+  geneidP_v1.0.Jan_08_2001.tar.gz        Full distribution of geneid parallel v1.0 
+  geneid_v1.0.Linux.Sep_08_2000.tar.gz   geneid v1.0 binary for LINUX computers
+  geneid_v1.0.SGI.Sep_08_2000.tar.gz     geneid v1.0 binary for SGI computers
+  geneid_v1.0.Solaris.Aug_22_2000.tar.gz geneid v1.0 binary for Solaris computers
+  docs.Aug_22_2000.ps.gz                 User's manual for geneid v1.0
+
+  -----------------------------------------------
+
+  Parameter files (geneid v1.1):
+  
+  dictyostelium.param.Mar_28_2003
+  drosophila.param.Mar_28_2003
+  human.param.Mar_28_2003
+  plasmodium.param.Mar_28_2003
+  tetraodon.param.Dec_8_2003
+  wheat.param.Nov_4_2003
+  celegans.param.Mar_10_2004	
+  arabidopsis.param.Jun_6_2003
+  rice.param.Dec_4_2003
+
+  Parameter files (geneid v1.2):
+ 
+  human.param.Apr_22_2004
+  aspergillus.param.Mar_5_2004
+  neurospora.param.Mar_1_2004
+  cinereus.param.Apr_14_2004
+  arabidopsis.param.Aug_4_2004
+  rice.param.Aug_3_2004
+  cneomorfans.param.May_17_2004
+  celegans.param.Jun_11_2004
+  wheat.param.Apr_22_2004
+  tetraodon.param.Apr_22_2004
+  plasmodium.param.Apr_22_2004
+  dros.param.Apr_22_2004
+  dictyostelium.param.Apr_22_2004
+  
+
+If you have any problem, please send mail to: geneid@imim.es
+
+last updated 4th August 2004

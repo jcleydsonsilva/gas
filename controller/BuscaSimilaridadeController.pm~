@@ -1,0 +1,156 @@
+#!/usr/bin/perl
+
+####################################################################################
+# Classe RemoteBlastController
+# Controla todas as requisições de análise nas bases de dados do blast vindas da 
+# interface
+# Autor:
+# José Cleydson Ferreira da Silva - 29/10/11
+#####################################################################################
+
+#####################################################################################
+# Nome a classe da controle da busca no NCBI
+#####################################################################################
+
+package BuscaSimilaridadeController;
+
+#####################################################################################
+# Bibliotecas e classes modelos utilizadas no sistema
+#####################################################################################
+use lib '/var/www/gsm/model/';
+use RemBlast;
+use Connect;
+use Bio::Perl;
+
+#####################################################################################
+# Objeto de conexão com a base de dados
+#####################################################################################
+	$db = Connect::db;
+
+#####################################################################################
+# Método de controle e configuração de busca remota no NCBI
+#####################################################################################
+sub QueryBlast
+{
+	#Pega os dados enviados pela função
+	my $prog	 = shift;
+	my $database = shift;
+	my $idisolado= shift;
+	my $organismo= shift;
+
+	# Recebe os valoes passados na função
+	if(@_)
+	{
+		$prog		{prog     }	= $_[0];
+		$database	{db       }	= $_[1];
+		$idisolado	{idisolado}	= $_[2];
+		$organismo	{organismo}	= $_[3];
+	}
+
+	##################################################################################
+	# SQL para selecionar os aminoácidos de um único isolado
+	##################################################################################
+	my $sql = 	"SELECT idaminoacids,idtranscipty, identification,protein
+		 	FROM aminoacids a
+		 	INNER JOIN transcripty t On t.idtranscripty = a.idtranscipty
+		 	INNER JOIN sequence s On t.idseq = s.idsequence
+			WHERE a.status <> 'Ok'
+			AND s.idIsolate = '$idisolado'
+			ORDER BY s.seqIdenticator";
+
+	# Preparação e execução de da sql
+	my $sth = $db->prepare($sql);
+	# Executa a SQL
+	if($sth->execute())
+	{	
+		# Pega todos os ids das sequencias selecionadas
+		$genes = $sth->fetchall_arrayref();
+	}
+	else
+	{
+		return 'Não foi possível selecionar os genes!';
+	}
+	#################################################################################
+	# Faz interação com todos os transcritos, para gerar o arquivos para analisar com
+	# o BLAST, inserir o resultado na base de dados
+	#################################################################################
+	foreach $i (@$genes)
+	{
+		if(length(@$i[3]) >= 30)
+		{
+			##############################################################################
+			#  Define nomes para os arquivos de entrada e saida de dados
+			#  Gera um arquivo com o registro de cada sequencia depositada para ser 
+			#  analisada no geneid
+			##############################################################################
+			# Define nomes para os arquivos de entrada e saida de dados
+			$namefile	= '';
+			$namefile 	= localtime(time);
+			$namefile	=~ s/[[:blank:]]+/-/g;
+			$namefile	.= ".txt";
+
+			# Gera um arquivo com o registro de cada sequencia depositada para ser analisada no geneid
+			$filename = "/var/www/gsm/files/in/$namefile ";
+			$output   = "/var/www/gsm/files/out/$namefile";
+
+			# Define o cabeçalho do arquivo fasta
+			$indetificacao = "@$i[2]";
+
+			##############################################################################
+			# Cria o arquivo contendo os transcritos de um único gene no formato fasta
+			# Inicia uma busca por similaridade no blast
+			##############################################################################
+			open (OUT, ">>$filename");
+				print OUT "$indetificacao\n";
+				print OUT "@$i[3]\n";
+			close(OUT);
+
+			# Classse e subrotna para buscar similaridade com o BLAST
+			@homology =();
+			@homology = RemBlast::QueryBlast($filename,$output,$prog,$database,$organismo) || die "Erro no processo de verificação online!";
+			################################################################################
+			# Insere na base de dados os hits encontrados
+			# ##############################################################################
+			$tam = @homology;
+			if($tam > 0)
+			{
+				$s = 0;
+				foreach $h (@homology)
+				{
+					if($s < 50)
+					{
+						# Sql para inserir os hits encontrados dos genes
+						$similarity = "INSERT INTO `similarity` (idaminoacids,nunAcesso,descrition,score,evalue)
+								   VALUES ('@$i[0]','@$h[0]','@$h[1]','@$h[2]','@$h[3]')";
+						# Prepara a execução da SQL
+						my $sth = $db->prepare($similarity);
+						# Executa a SQL
+						$sth->execute();
+					}
+					$s++;
+				}
+			}
+			else
+			{
+				# Sql para inserir os hits encontrados dos genes
+				$similarity = "INSERT INTO `similarity` (idaminoacids,nunAcesso,descrition,score,evalue)
+						   VALUES ('@$i[1]','-','NOHITS','1','1')";
+				# Prepara a execução da SQL
+				my $sth = $db->prepare($similarity);
+				# Executa a SQL
+				$sth->execute();
+			}
+			###############################################################################
+			# Atualiza o status da anotação do gene como ok
+			###############################################################################
+			$update ="UPDATE aminoacids
+				    SET status='Ok' where idaminoacids='@$i[0]'";
+			# Prepara a execução da SQL
+			my $sth = $db->prepare($update);
+			# Executa a SQL
+			$sth->execute();
+		}
+	}
+	return "Processo de anotação concluído com sucesso";
+}
+return 1

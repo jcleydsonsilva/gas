@@ -1,0 +1,4 @@
+C+G <= 43 human0-43.cfg Train0-43
+C+G <= 51 human43-51.cfg Train43-51
+C+G <= 57 human51-57.cfg Train51-57
+C+G <= 100 human57-100.cfg Train57-100

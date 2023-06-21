@@ -1,0 +1,60 @@
+<ul id="navmenu-h">
+	
+<li><a href="#fixo">Cadastro</a>
+<ul>
+	<li><a href="cadastroInstitution.pl">Insituição </a></li>
+	<li><a href="userRegister.pl">Usuário</a></li>
+	<li><a href="isolateRegister.pl">Isolados</a></li>
+	<li><a href="sequenceRegister.pl">Sequência</a></li>
+	<li><a href=""></a></li>
+</ul>
+</li>
+<li><a href="#fixo">Análise</a>
+<ul>
+	<li><a href="muBlast.pl">Blast </a></li>
+	<li><a href="index.pl?form=alignment">Alinhamento</a></li>
+	<li><a href=""></a></li>
+</ul>
+</li>
+</li>
+<li><a href="#fixo">Procurar</a>
+<ul>
+	<li><a href="SequenceQuery.pl">Sequência</a></li>
+	<li><a href="	">Genes</a></li>
+	<li><a href="BuscaBancosExternos.pl">Bancos Externos</a></li>
+	<li><a href="microsatellite.pl"> Microsatellite </a></li>
+	<li><a href=""></a></li>
+</ul>
+</li>
+<li><a href="#fixo">Etapas de Anotação</a>
+<ul>
+	<li><a href="PipelineGeneFind.pl"> 1 - Predição de Genes  		</a></li>
+	<li><a href="BuscaSimularidade.pl	  "> 2 - Buscar Similaridade	</a></li>
+	<li><a href="NoRedudancy.pl		  "> 3 - Não redundante 	</a></li>
+	<li><a href="FamilyGo.pl  "> 3 - Familia & GO 	</a></li>
+	<li><a href=""></a></li>
+</ul>
+
+<li><a href="estatistica.pl">Estatística</a>
+<ul>
+	<li><a href=""></a></li>
+</ul>
+<li><a href="#fixo">Ferramentas</a>
+<ul>
+	<li><a href="Fgenesh.pl" > Fgenesh  </a></li>
+	<li><a href="Geneid.pl"  > Geneid   </a></li>
+	<li><a href="Genescan.pl"> GeneScan </a></li>
+	<li><a href=""></a></li>
+</ul>
+
+
+<li><a href="#fixo">Primer</a>
+<ul>
+	<li><a href="index.pl?form=desenharPrimer">Desenhar primer</a></li>
+	<li><a href="index.pl?form=consultaprimer"> Consultar primer </a></li>
+	<li><a href=""></a></li>
+</ul>
+
+<li><a href="">Sair</a></li>
+
+</ul>

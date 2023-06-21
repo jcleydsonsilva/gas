@@ -1,0 +1,85 @@
+head	1.2;
+access;
+symbols;
+locks
+	gmaster:1.2; strict;
+comment	@# @;
+
+
+1.2
+date	2003.03.28.14.17.11;	author gmaster;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2003.03.28.14.11.04;	author gmaster;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@Adding parameter files...
+@
+text
+@#
+# README - Readme File for "pub/software/geneid" directory.
+#
+# $Id: README,v 1.1 2003/03/28 14:11:04 gmaster Exp gmaster $
+#
+
+This directory contains the following files and subdirectories:
+
+  README    This file...
+  GNU-GPL   GNU General Public License (Version 2) - Free Software.
+            Terms and conditions for copying, distribution and modification.
+
+  -----------------------------------------------
+  geneid_v1.1.Feb_26_2003.tar.gz       Revision (free of some compilation bugs)
+  geneid_v1.1.Jul_15_2002.tar.gz       Full distribution of geneid v1.1 (source + parameter files)
+  docs.Jul_15_2002.tar.gz              User's manual for geneid v1.1
+
+  -----------------------------------------------
+
+  geneid_v1.0.Sep_08_2000.tar.gz         Full distribution of geneid v1.0 (source + parameter files)     
+  geneidP_v1.0.Jan_08_2001.tar.gz        Full distribution of geneid parallel v1.0 
+  geneid_v1.0.Linux.Sep_08_2000.tar.gz   geneid v1.0 binary for LINUX computers
+  geneid_v1.0.SGI.Sep_08_2000.tar.gz     geneid v1.0 binary for SGI computers
+  geneid_v1.0.Solaris.Aug_22_2000.tar.gz geneid v1.0 binary for Solaris computers
+  docs.Aug_22_2000.ps.gz                 User's manual for geneid v1.0
+
+  -----------------------------------------------
+
+  Parameter files:
+  
+  dictyostelium.param.Mar_28_2003
+  drosophila.param.Mar_28_2003
+  human.param.Mar_28_2003
+  plasmodium.param.Mar_28_2003
+  tetraodon.param.Mar_28_2003
+  wheat.param.Mar_28_2003	
+
+If you have any problem, please send mail to: geneid@@imim.es
+
+last updated 28th March 2003@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d4 1
+a4 1
+# $Id: README,v 1.1 2002/07/16 13:13:17 gmaster Exp $
+d14 1
+a14 1
+
+d27 11
+d40 1
+a40 1
+last updated 16th July 2002@

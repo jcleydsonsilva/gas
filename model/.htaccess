@@ -1,0 +1,4 @@
+AuthName "Area restrita - Apenas membros do Biopop"
+AuthType Basic
+AuthUserFile /home/cleysinho/.htpass 
+require valid-user

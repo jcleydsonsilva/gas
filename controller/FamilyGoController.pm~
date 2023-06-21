@@ -1,0 +1,90 @@
+package FamilyGoController;
+
+####################################################################################
+# Classe NoRedundance
+# 
+# 
+# Autor:
+# José Cleydson Ferreira da Silva - 13/12/11
+#####################################################################################
+
+#####################################################################################
+# Bibliotecas e classes modelos utilizadas no sistema
+#####################################################################################
+use lib '/var/www/gsm/model/';
+
+use Connect;
+use InterProScan;
+use Data::Dumper;
+
+
+
+#####################################################################################
+# Objeto de conexão com a base de dados
+#####################################################################################
+	$db = Connect::db;
+
+#####################################################################################
+# Monta a base de dados não redunante a partir do numero do isolado. Utilizados vários
+# criterios para a montagem:
+# 1 - 
+# 2 - 
+# 3 -
+# 4 - 
+#####################################################################################
+
+sub RunFamilyGo
+{
+	$idIsolate = shift;
+
+	if(@_)
+	{
+		$idIsolate{idIsolate} = $_;
+	}
+
+	my $gene = "select identification,protein from aminoacids a 
+			INNER JOIN noredundancy r On a.idaminoacids = r.id_aminoacids 
+			INNER JOIN sequence s On r.id_seq = s.idsequence where idIsolate=$idIsolate
+			ORDER BY identification";
+
+	my $sth = $db->prepare($gene);
+
+	if($sth->execute())
+	{
+		$protein = $sth->fetchall_arrayref();
+	}
+
+	$namefile	= 'interpro';
+	$namefile 	.= localtime(time);
+	$namefile	=~ s/[[:blank:]]+//g;
+	$namefile	=~ s/://g;
+	$namefile	.= '.txt';
+
+	# Gera um nome para cada arquivo com o para armazenar a output.
+
+	foreach $i (@$protein)
+	{
+		$sequence = "@$i[0]\n@$i[1]\n";
+
+		$status = InterProScan::RunInterProScan($sequence,$output);
+		print "$status/n";
+		
+		if($status eq 'Ok')
+		{
+			print "$output\n";
+			InterProScan::ParserInterProScan($output);
+		}
+		@family = InterProScan::Get_Family();
+		@go	  = InterProScan::Get_Go();
+		foreach $f (@go)
+		{
+			print @$f[0];
+			print @$f[1];
+		}
+		exit;
+		
+	}
+
+}
+
+return 1
