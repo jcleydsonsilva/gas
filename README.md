@@ -1,4 +1,3 @@
-
 #Automated Genome Annotation System
 
 This repository contains an automated genome annotation system, written in Perl, that utilizes MySQL as the database to store the data and is executed on an Apache web server.
