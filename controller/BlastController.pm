@@ -126,7 +126,7 @@ sub RunBlast
 		case 'Clear'
 		{	
 			# Redireciona para a a página principal se clicar em Clear
-			CGI::redirect(-URL=>'http://200.235.177.179/gsm/view/public/');
+			CGI::redirect(-URL=>'http://localhost/gsm/view/public/');
 		}
 	}
 }
